@@ -3,8 +3,8 @@ function main_choice
 {
 echo "||===============================||"
 echo "||   BASH HELPER 16 FUNCTIONS    ||"
-echo "||===============================||"
-echo "|| [h] - Display help            ||" 
+echo "||   [h] - Help     [Q] - quit   ||"
+echo "||==========main options=========||"
 echo "||                               ||" 
 echo "|| [0] - Name operations [6Fun.] ||" 
 echo "||                               ||" 
@@ -14,9 +14,7 @@ echo "|| [8] - Image operations[4Fun.] ||"
 echo "||                               ||" 
 echo "|| [7] - Other operations[2Fun.] ||" 
 echo "||                               ||"  
-echo "|| [Q] - Quit                    ||" 
-echo "||                               ||"  
-echo "||===select one from the above===||"
+echo "||===============================||"
 
 
 read main_choice
