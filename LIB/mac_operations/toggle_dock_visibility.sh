@@ -3,10 +3,9 @@ function toggle_dock_visibility
 {
 	if [ $(defaults read com.apple.Dock autohide) == 0 ]
 	then
-		defaults write com.apple.Dock autohide 1
+#	'osascript /Users/konradzajac/Library/Mobile\ Documents/com\~apple\~CloudDocs/0.BASH/LIB/script/autohide_ON.scpt'
 	else
-		defaults write com.apple.Dock autohide 0
+	osascript -e 'tell aplication "System Events" to set the autohide of the dock preferences to false' END
 	fi
-	killall Dock    
 
 }

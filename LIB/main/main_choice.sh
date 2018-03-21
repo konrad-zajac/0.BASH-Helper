@@ -2,7 +2,7 @@
 function main_choice
 {
 echo "||===============================||"
-echo "||   BASH HELPER 16 FUNCTIONS    ||"
+echo "||   BASH HELPER 17 FUNCTIONS    ||"
 echo "||   [h] - Help     [Q] - quit   ||"
 echo "||==========main options=========||"
 echo "||                               ||" 

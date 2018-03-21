@@ -21,6 +21,7 @@ source LIB/other_operations/other_operations_questions.sh
 source LIB/other_operations/convert_mov_to_mp4.sh
 
 source LIB/string_operations/so_questions.sh
+source LIB/string_operations/increment_folders.sh
 source LIB/string_operations/string_adding_questions.sh
 source LIB/string_operations/replace_string.sh
 source LIB/string_operations/remove_from_front.sh
@@ -37,7 +38,11 @@ source LIB/mac_operations/change_screenshots_path.sh
 source LIB/mac_operations/zero_delay_dock.sh
 source LIB/mac_operations/toggle_battery_percentage.sh
 source LIB/mac_operations/toggle_hidden_files.sh
-source LIB/mac_operations/toggle_dock_visibility.sh
+#source LIB/mac_operations/toggle_dock_visibility.sh
+
+
+
+#source LIB/script/autoogide_OFF.scpt
 
 function main {
 main_choice
@@ -74,30 +79,15 @@ then
     elif [[ $string_choice == 8 ]]
     then
         mod_choice
-        if [[ $modifying_choice == 7 ]]
-        then
-        echo "TODO"
-            # let LICZNIK=0;
-            # for PLIK in $(ls -1 | sort -f); do
-            #     if [ "$PLIK" != "0.BASH.sh" ] || [ "$PLIK" != "/LIB" ]
-            #     then
-            #         if [ $LICZNIK -lt 10 ]
-            #         then
-            #             echo 0$LICZNIK.$PLIK;
-            #             mv $PLIK 0$LICZNIK.$PLIK;
-            #             else
-            #             echo $LICZNIK.$PLIK;
-            #             mv $PLIK $LICZNIK.$PLIK;
-            #         fi
-            #     let LICZNIK=LICZNIK+1;
-            #     fi
-            # done
-            elif [[ $modifying_choice == 0 ]]
-            then
+			if [[ $modifying_choice == 0 ]]
+			then
                 replace_string
             elif [[ $modifying_choice == 9 ]]
             then
                 iterate_ext
+            elif [[ $modifying_choice == 8 ]]
+            then
+			increment_folders
             elif [[ $modifying_choice == "Q" || "q" ]]
             then
                 quit

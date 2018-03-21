@@ -5,8 +5,7 @@ function change_screenshots_path
 read screenshot_choice
  if [[ $screenshot_choice == 0 ]]
     then
-   $(mkdir -p ~/Documments/screenshots) 
-   defaults write com.apple.screencapture location ~/Documments/screenshots
+(mkdir -p ~/Documents/screenshots) && (defaults write com.apple.screencapture location ~/Documents/screenshots)
     elif [[ $screenshot_choice == 9 ]]
     then
 
