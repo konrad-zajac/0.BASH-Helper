@@ -6,7 +6,7 @@ echo "||   BASH HELPER 17 FUNCTIONS    ||"
 echo "||   [h] - Help     [Q] - quit   ||"
 echo "||==========main options=========||"
 echo "||                               ||" 
-echo "|| [0] - Name operations [6Fun.] ||" 
+echo "|| [0] - Name operations [7Fun.] ||" 
 echo "||                               ||" 
 echo "|| [9] - Mac operations  [4Fun.] ||" 
 echo "||                               ||" 
@@ -19,7 +19,7 @@ echo "||===============================||"
 
 read main_choice
 case "$main_choice" in 
-	"0") string_operations ;;
+	"0") name_operations ;;
 	"9") mac_operations ;;	
 	"8") image_operations;;	
 	"7") other_operations;;	

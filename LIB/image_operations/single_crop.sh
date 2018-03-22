@@ -13,7 +13,7 @@ function single_crop
                             read Xin
                             echo -e "give Y of the the output image\n|--\n|--\n|--"
                             read Yin
-                            echo "insert the output"
+                            echo "insert the output fle name"
                             read out
                                 convert $fn.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "$out"."$ext"
                                 open "$out"."$ext"  

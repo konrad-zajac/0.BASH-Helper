@@ -20,18 +20,18 @@ source LIB/image_operations/merge_horizontally.sh
 source LIB/other_operations/other_operations_questions.sh
 source LIB/other_operations/convert_mov_to_mp4.sh
 
-source LIB/string_operations/so_questions.sh
-source LIB/string_operations/increment_folders.sh
-source LIB/string_operations/string_adding_questions.sh
-source LIB/string_operations/replace_string.sh
-source LIB/string_operations/remove_from_front.sh
-source LIB/string_operations/remove_string.sh
-source LIB/string_operations/string_removing_questions.sh
-source LIB/string_operations/iterate_ext.sh
-source LIB/string_operations/add_to_front.sh
-source LIB/string_operations/add_to_back.sh
-source LIB/string_operations/add_to_back_ext.sh
-source LIB/string_operations/mod_choice.sh
+source LIB/name_operations/so_questions.sh
+source LIB/name_operations/increment_folders.sh
+source LIB/name_operations/string_adding_questions.sh
+source LIB/name_operations/replace_string.sh
+source LIB/name_operations/remove_from_front.sh
+source LIB/name_operations/remove_string.sh
+source LIB/name_operations/string_removing_questions.sh
+source LIB/name_operations/iterate_ext.sh
+source LIB/name_operations/add_to_front.sh
+source LIB/name_operations/add_to_back.sh
+source LIB/name_operations/add_to_back_ext.sh
+source LIB/name_operations/mod_choice.sh
 
 source LIB/mac_operations/mac_operations_choice.sh
 source LIB/mac_operations/change_screenshots_path.sh
@@ -50,7 +50,7 @@ echo "Operation done"
 ls -l
 goodbye					
 }
-function string_operations
+function name_operations
 {
 so_questions
 if [[ $string_choice == 0 ]]
