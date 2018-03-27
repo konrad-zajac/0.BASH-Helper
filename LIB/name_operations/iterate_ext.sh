@@ -16,10 +16,10 @@ function  iterate_ext
 							if [[ "$i" -le 9 ]]
 							then
 							safety_function
-							mv "$f" "0$i.$ext"
+							mv $f 0$i.$ext
 						else
 							safety_function
-							mv "$f" "$i.$ext"
+							mv $f $i.$ext
 							fi  
 	                let i=i+1;
 	                    done
@@ -31,10 +31,10 @@ function  iterate_ext
 							if [ $i -le 9 ]
 							then
 							safety_function
-							mv "$f" "0$i.$ext"
+							mv $f 0$i.$ext
 						else
 							safety_function
-							mv "$f" "$i.$ext"
+							mv $f $i.$ext
 						fi  
 	                let i=i+1;
 	                    done
