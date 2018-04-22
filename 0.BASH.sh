@@ -27,7 +27,8 @@ source LIB/name_operations/replace_string.sh
 source LIB/name_operations/remove_from_front.sh
 source LIB/name_operations/remove_string.sh
 source LIB/name_operations/string_removing_questions.sh
-source LIB/name_operations/iterate_ext.sh
+source LIB/name_operations/iterate_ext_from_0.sh
+source LIB/name_operations/iterate_ext_from_1.sh
 source LIB/name_operations/add_to_front.sh
 source LIB/name_operations/add_to_back.sh
 source LIB/name_operations/add_to_back_ext.sh
@@ -84,8 +85,11 @@ then
                 replace_string
             elif [[ $modifying_choice == 9 ]]
             then
-                iterate_ext
+                iterate_ext_from_0
             elif [[ $modifying_choice == 8 ]]
+            then
+                iterate_ext_from_1
+            elif [[ $modifying_choice == 7 ]]
             then
 			increment_folders
             elif [[ $modifying_choice == "Q" || "q" ]]
