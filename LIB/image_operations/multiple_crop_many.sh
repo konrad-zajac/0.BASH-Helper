@@ -16,15 +16,15 @@ function multiple_crop_many
     read X_output
     echo -e "give Y of the the output image\n|--\n|--\n|--"
     read Y_output
+	mkdir out
 
 for ((i = 1 ; i <= $num_ph ; i += 1));
 do
    if [[ $i -le 9 ]]
     then
-    convert 0$i.$ext -crop "$X_output"x"$Y_output"+"$X_start_position"+"$Y_start_position" "cpy$i"."$ext"
+    convert 0$i.$ext -crop "$X_output"x"$Y_output"+"$X_start_position"+"$Y_start_position" "out/min-0$i"."$ext"
     else
-      convert $i.$ext -crop "$X_output"x"$Y_output"+"$X_start_position"+"$Y_start_position" "cpy$i"."$ext"
+      convert $i.$ext -crop "$X_output"x"$Y_output"+"$X_start_position"+"$Y_start_position" "out/min-$i"."$ext"
     fi
-
 done
 }
