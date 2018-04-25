@@ -20,10 +20,7 @@ source LIB/image_operations/merge_horizontally.sh
 source LIB/other_operations/other_operations_questions.sh
 source LIB/other_operations/convert_mov_to_mp4.sh
 
-source LIB/name_operations/questions/questions_manipulation_strings.sh
-source LIB/name_operations/questions/questions_adding_strings.sh
-source LIB/name_operations/questions/questions_removing_strings.sh
-source LIB/name_operations/questions/questions_modifying_strings.sh
+source LIB/name_operations/questions.sh
 source LIB/name_operations/replace_string.sh
 source LIB/name_operations/increment_folders.sh
 source LIB/name_operations/remove_from_front.sh
@@ -41,7 +38,7 @@ source LIB/mac_operations/zero_delay_dock.sh
 source LIB/mac_operations/toggle_battery_percentage.sh
 source LIB/mac_operations/toggle_hidden_files.sh
 #source LIB/mac_operations/toggle_dock_visibility.sh
-
+source foo.sh
 
 
 #source LIB/script/autoogide_OFF.scpt
@@ -54,10 +51,10 @@ goodbye
 }
 function name_operations
 {
-questions_manipulation_string
+questions manipulate
 if [[ $string_choice == 0 ]]
 then
-	questions_adding_string
+	questions adding_string
         if [ "$where" == "0" ]
         then
         add_to_front
@@ -70,7 +67,7 @@ then
     	fi
     elif [[ $string_choice == 9 ]]
     then
-	questions_removing_string
+	questions removing_string
         if [[ $removing_choice == 0 ]]
         then
             remove_from_front		
@@ -80,7 +77,7 @@ then
         fi
     elif [[ $string_choice == 8 ]]
     then
-	questions_modifying_string
+	questions modifying_string
 			if [[ $modifying_choice == 0 ]]
 			then
                 replace_string
@@ -99,6 +96,9 @@ then
             elif [[ $modifying_choice == "Q" || "q" ]]
             then
                 quit
+            elif [[ $modifying_choice == "x" ]]
+            then
+			foo zxzxz
     fi
     elif [[ $string_choice == "Q" || "q" ]]
     then
