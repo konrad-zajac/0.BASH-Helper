@@ -1,4 +1,0 @@
-function quit
-{
-	kill -SIGINT $$
-}
