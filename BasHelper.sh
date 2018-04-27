@@ -21,11 +21,6 @@ source LIB/other_operations/other_operations_questions.sh
 source LIB/other_operations/convert_mov_to_mp4.sh
 
 source LIB/name_operations/questions.sh
-source LIB/name_operations/replace_string.sh
-source LIB/name_operations/increment_folders.sh
-source LIB/name_operations/iterate_ext_from_0.sh
-source LIB/name_operations/iterate_ext_from_1.sh
-source LIB/name_operations/iterate_ext_from_M.sh
 source LIB/name_operations/string_manipulation.sh
 
 source LIB/mac_operations/mac_operations_choice.sh
@@ -69,21 +64,16 @@ then
     elif [[ $string_choice == 8 ]]
     then
 	questions modifying_string
-			if [[ $modifying_choice == 0 ]]
-			then
-                replace_string
-            elif [[ $modifying_choice == 9 ]]
-            then
-                iterate_ext_from_0
-            elif [[ $modifying_choice == 8 ]]
-            then
-                iterate_ext_from_1
-            elif [[ $modifying_choice == 7 ]]
-            then
-                iterate_ext_from_M
-            elif [[ $modifying_choice == 6 ]]
-            then
-			increment_folders
+			if [[ $modifying_choice == 0 ]];then
+            string_manipulation replace_string
+            elif [[ $modifying_choice == 9 ]];then
+			string_manipulation iterate_ext_from_0
+            elif [[ $modifying_choice == 8 ]];then
+			string_manipulation iterate_ext_from_1
+            elif [[ $modifying_choice == 7 ]];then
+			string_manipulation iterate_ext_from_M
+            elif [[ $modifying_choice == 6 ]];then
+			string_manipulation increment_folders
             elif [[ $modifying_choice == "Q" || "q" ]]
             then
                 quit

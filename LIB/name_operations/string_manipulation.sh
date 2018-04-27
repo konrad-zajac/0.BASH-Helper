@@ -21,7 +21,7 @@ function string_manipulation
         mv "$f" "${filename}$what.${extension}"
       done;;
 
-        "inc_f")
+     "increment_folders")
         let poprzedni_numer=-1
         for plik in $(ls -1 | grep "[0-9][0-9].*");do
           let numer=$(echo $plik | sed -e "s/^0*//" | cut -d. -f1)
@@ -52,6 +52,73 @@ function string_manipulation
                             safety_function
                       mv "$f" "$(echo $f | sed "s/$string_to_remove//g")"
                   done;;
+    "replace_string")
+    echo "What string to replace?"
+            read string_to_replace
+            echo "With what?"
+            read string_to_replace_with
+            for f in *
+            do
+                    safety_function
+            mv "$f" "$(echo $f | sed "s/$string_to_replace/$string_to_replace_with/g")"
+        done;;
+"iterate_ext_from_0")
+ 
+echo "Insert extension- (without the dot)"
+read ext
+
+i=0
+	for f in *
+	do
+		if [ $i -le 9 ]
+		then
+		safety_function
+		mv "$f" "0$i.$ext"
+	else
+		safety_function
+		mv "$f" "$i.$ext"
+	fi  
+let i=i+1;
+    done
+	;;
+"iterate_ext_from_1")
+ 
+echo "Insert extension- (without the dot)"
+read ext
+
+i=1
+	for f in *
+	do
+		if [ $i -le 9 ]
+		then
+		safety_function
+		mv "$f" "0$i.$ext"
+	else
+		safety_function
+		mv "$f" "$i.$ext"
+	fi  
+let i=i+1;
+    done
+	;;
+"iterate_ext_from_M")
+echo "Insert extension - (without the dot)"
+read ext
+
+echo "Insert the starting numer - M"
+read i
+	for f in *
+	do
+		if [ $i -le 9 ]
+		then
+		safety_function
+		mv "$f" "0$i.$ext"
+	else
+		safety_function
+		mv "$f" "$i.$ext"
+	fi  
+let i=i+1;
+    done
+	;;
   *)  echo "unknown option"
     esac
 }
