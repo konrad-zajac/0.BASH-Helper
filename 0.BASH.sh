@@ -23,14 +23,10 @@ source LIB/other_operations/convert_mov_to_mp4.sh
 source LIB/name_operations/questions.sh
 source LIB/name_operations/replace_string.sh
 source LIB/name_operations/increment_folders.sh
-source LIB/name_operations/remove_from_front.sh
-source LIB/name_operations/remove_string.sh
 source LIB/name_operations/iterate_ext_from_0.sh
 source LIB/name_operations/iterate_ext_from_1.sh
 source LIB/name_operations/iterate_ext_from_M.sh
-source LIB/name_operations/add_to_front.sh
-source LIB/name_operations/add_to_back.sh
-source LIB/name_operations/add_to_back_ext.sh
+source LIB/name_operations/string_manipulation.sh
 
 source LIB/mac_operations/mac_operations_choice.sh
 source LIB/mac_operations/change_screenshots_path.sh
@@ -55,25 +51,20 @@ questions manipulate
 if [[ $string_choice == 0 ]]
 then
 	questions adding_string
-        if [ "$where" == "0" ]
-        then
-        add_to_front
-    	elif [ "$where" == "9" ]
-    	then
-    	add_to_back
-    	elif [ "$where" == "8" ]
-    	then
-    	add_to_back_ext
+        if [ "$where" == "0" ];then
+        string_manipulation add_front
+    	elif [ "$where" == "9" ];then
+    	string_manipulation add_back
+    	elif [ "$where" == "8" ];then
+        string_manipulation add_back_ext
     	fi
     elif [[ $string_choice == 9 ]]
     then
 	questions removing_string
-        if [[ $removing_choice == 0 ]]
-        then
-            remove_from_front		
-        elif [[ $removing_choice == 9 ]]
-        then
-            remove_string
+        if [[ $removing_choice == 0 ]];then
+        string_manipulation rm_front
+        elif [[ $removing_choice == 9 ]];then
+        string_manipulation rm_string
         fi
     elif [[ $string_choice == 8 ]]
     then
