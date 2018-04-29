@@ -29,8 +29,12 @@ case $1 in
         echo "[8] Rename files from 1 to N"
         echo "[7] Rename files from M to N"
         echo "[6] Increment a series of folders, when a duplicate found."
-        read modifying_choice
-  ;;
+        read modifying_choice;;
+
+        "mac_operations_questions")
+        echo -e "what mac operation would you like to do?\n[0] Make the dock hide delay 0\n[9] change the path for screenshots\n[8] Toggle hidden files\n[7] Toggle battery percentage\n[Q] Quit"
+        read mac_choice;;
+
   *) echo "unknown option"
 esac
 }
