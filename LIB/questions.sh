@@ -35,6 +35,15 @@ case $1 in
         echo -e "what mac operation would you like to do?\n[0] Make the dock hide delay 0\n[9] change the path for screenshots\n[8] Toggle hidden files\n[7] Toggle battery percentage\n[Q] Quit"
         read mac_choice;;
 
+        "OO_questions")
+    echo -e "[7]==============================\nWhat kind of operation?"
+    echo "[H,h] Help"
+    echo "[0] Convert mov to mp4"
+    echo "[9] sort alphabeticaly"
+    echo "[R] Run again"
+    echo "[Q] Quit"
+    read oo_choice
+        ;;
   *) echo "unknown option"
 esac
 }

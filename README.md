@@ -31,4 +31,4 @@
 
     * Other operations: 
         - convert .mov to .mp4
-		- delete everything else
+		- sort alphabetically 

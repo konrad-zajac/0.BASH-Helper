@@ -2,7 +2,6 @@
 source LIB/questions.sh
 source LIB/operations.sh
 
-source LIB/main/display_manual.sh 
 source LIB/main/safety_function.sh
 source LIB/main/delete_everything_else.sh
 
@@ -15,13 +14,9 @@ source LIB/image_operations/merge_choice.sh
 source LIB/image_operations/merge_vertically.sh
 source LIB/image_operations/merge_horizontally.sh
 
-source LIB/other_operations/other_operations_questions.sh
-source LIB/other_operations/convert_mov_to_mp4.sh
-
 source LIB/mac_operations/zero_delay_dock.sh
 source LIB/mac_operations/toggle_battery_percentage.sh
 #source LIB/mac_operations/toggle_dock_visibility.sh
-source foo.sh
 
 
 #source LIB/script/autoogide_OFF.scpt
@@ -122,14 +117,17 @@ main_io_choice
 }
 function other_operations
 {
-    other_operations_questions
+  questions OO_questions
 
     if [[ $oo_choice == 0 ]]
     then
-        convert_mov_to_mp4
+      operations OO_conv_mov2mp4
+    # elif [[ $oo_choice == 9 ]] 
+    # then
+    #     operations delete_else
     elif [[ $oo_choice == 9 ]] 
     then
-        operations delete_else
+        operations OO_sort
     elif [[ $oo_choice == "Q" || "q" ]]
     then
         operations quit
