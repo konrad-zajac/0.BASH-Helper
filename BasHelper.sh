@@ -86,24 +86,19 @@ function mac_operations
 function image_operations 
 {
 main_io_choice
-    if [[ $image_choice == 0 ]]
-    then
-        echo "TODO - crop photo albums"
-    elif [[ $image_choice == 9 ]]
-    then
-        merge_choice
+    if [[ $image_choice == 0 ]]; then
+        operations IO_merge_choice
         if [[ $merge_choice == 0 ]];then
            operations image_merge_vertically
         elif [[ $merge_choice == 9 ]];then
            operations image_merge_horizontally
         fi
+    elif [[ $image_choice == 9 ]];then
+       operations IO_single_crop             
     elif [[ $image_choice == 8 ]]
-    then
-       single_crop             
-    elif [[ $image_choice == 7 ]]
-    then
+    then    
         multiple_crop_many
-    elif [[ $image_choice == 6 ]]
+    elif [[ $image_choice == 7 ]]
     then
         multiple_crop_one
     elif [[ $image_choice == "Q" || "q" ]]

@@ -40,7 +40,15 @@ case $1 in
             echo "[7] - (one  format  many images) crop many images from many images "
             echo "[6] - (many formats one  image ) crop many images from one image "
             echo "[Q] - Quit"
-        read image_choice
+        read image_choice;;
+
+        "IO_merge_choice")
+        echo -e "merge two pictures veridically or horizontally? (name them 1.ext and 2.ext)\n[0] |||  - vertical\n[9] ---  - horizontal"
+        read merge_choice
+        echo "insert an extension"
+        read ext
+        echo "how to name the result?"
+        read result_name
         ;;
 
         "mac_operations_questions")
