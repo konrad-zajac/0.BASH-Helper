@@ -107,7 +107,7 @@ function operations
       "restart")
       ./$0;;
 
-#2STRING MANIPULATION
+#[0] STRING MANIPULATION
     "add_front") 
       for f in *;do
         safety_function
@@ -213,13 +213,102 @@ function operations
           fi  
           let i=i+1;
             done;;
-#3_IMAGE OPERATIONS---
-          "image_merge_horizontally")
-          convert 1.$ext 2.$ext +append $result_name.$ext;open $result_name.$ext;;
+#[8]_IMAGE OPERATIONS---
+"IO_multiple_crop_many")
+echo -e "This function crops images named 1..2..3..N"
+           echo "How many photos?"
+       read num_ph    
+       echo $num_ph          
 
-          "image_merge_vertically")
-          convert 1.$ext 2.$ext -append $result_name.$ext;open $result_name.$ext;;
-#4_MAC OPERATIONS---
+    echo "insert the extension"
+    read ext
+    echo "give the starting position X - [X,y]"
+    read Xout
+    echo "give the starting position Y - [x,Y]"
+    read Yout
+    echo -e "give X of the the output image\n===\n---\n---"
+    read Xin
+    echo -e "give Y of the the output image\n|--\n|--\n|--"
+    read Yin       
+
+for ((i = 1 ; i <= $num_ph ; i += 1)); do
+convert $i.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy$i"."$ext"
+done;;
+
+"IO_single_crop")
+       echo "insert the filename (without the extension)";read fn
+                            echo "insert the extension";read ext
+                            echo "give the starting position X - [X,y]";read Xout
+                            echo "give the starting position Y - [x,Y]";read Yout
+                            echo -e "give X of the the output image\n===\n---\n---";read Xin
+                            echo -e "give Y of the the output image\n|--\n|--\n|--";read Yin
+                            echo "insert the output fle name";read out
+                                convert $fn.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "$out"."$ext";open "$out"."$ext"  ;;
+"IO_rename_photos")
+			echo "Insert the year - (this will not change)"
+			read year
+			echo "Insert the month - (this will not change)"
+			read month
+            max=1
+                    for f in *
+                    do
+                    	safety_function
+								if [ $max -le 9 ]
+								then
+							mv "$f" "R$year M$month D0$max.png"
+								else
+                        mv "$f" "R$yearM$monthD$max.png"
+								fi
+                let max=max+1;
+                    done;;
+
+    "IO_multipe_crop_many")
+        echo -e "This function crops images named 01..02..11..N"
+           echo "How many photos?"
+       read num_ph    
+       echo $num_ph          
+
+    echo "insert the extension"
+    read ext
+    echo "give the starting position X - [X,y]"
+    read X_start_position
+    echo "give the starting position Y - [x,Y]"
+    read Y_start_position
+    echo -e "give X of the the output image\n===>\n---\n---"
+    read X_output
+    echo -e "give Y of the the output image\n|--\n|--\n|--"
+    read Y_output
+	mkdir out
+
+for ((i = 1 ; i <= $num_ph ; i += 1));
+do
+   if [[ $i -le 9 ]]
+    then
+    convert 0$i.$ext -crop "$X_output"x"$Y_output"+"$X_start_position"+"$Y_start_position" "out/min-0$i"."$ext"
+    else
+      convert $i.$ext -crop "$X_output"x"$Y_output"+"$X_start_position"+"$Y_start_position" "out/min-$i"."$ext"
+    fi
+done
+    ;;
+    "IO_multipe_crop_one")
+    echo -e "This function crops images from one big group\n How many small photos?"
+       read num_ph    
+      echo -e "Enter the big photo name"
+      read big_photo
+  
+for ((i = 1 ; i <= $num_ph ; i += 1)); do
+echo "---------------------photo $i----------------------------"
+  
+    echo "give the starting position X - [X,y]"; read Xout
+    echo "give the starting position Y - [x,Y]"; read Yout
+    echo -e "give X of the the output image\n===\n---\n---"; read Xin
+    echo -e "give Y of the the output image\n|--\n|--\n|--"; read Yin       
+
+convert $big_photo -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy$i".png
+done;;
+          "IO_h_merge") mkdir res;convert tmp/1.$ext tmp/2.$ext +append res/result_h.$ext;open res/result_h.$ext;;
+          "IO_v_merge") mkdir res;convert tmp/1.$ext tmp/2.$ext -append res/result_v.$ext;open res/result_v.$ext;;
+#[9]_MAC OPERATIONS---
           "MO_change_screenshots_path")
           echo -e "create the directiry ~/Documments/screenshots and make it the default, or to other?\n[0] - yes \n[9] - no, to other path"
           read screenshot_choice
@@ -230,8 +319,8 @@ function operations
           read path
           defaults write com.apple.screencapture location $path
           fi
-          killall Dock
-          ;;
+          killall Dock;;
+
           "MO_tf_visibility")
           if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
               defaults write com.apple.finder AppleShowAllFiles YES
@@ -252,9 +341,9 @@ function operations
  
               "MO_zero_dd")
         defaults write com.apple.dock autohide-time-modifier -int 0
-        killall Dock
-              ;;
-#5_OTHER OPERATIONS---
+        killall Dock;;
+
+#[7]_OTHER OPERATIONS---
       "OO_conv_mov2mp4")
           echo "Enter the name of the .mov";read name
           ffmpeg -i $name.mov -vcodec copy -acodec copy $name.mp4;;
@@ -262,24 +351,6 @@ function operations
           "OO_sort") echo "Enter the name of the file to be sorted";read in;filename="${in%.*}";ext="${in##*.}"
           cat $in | sort > ${filename}.sorted.${ext};;
 #6_IMAGE OPERATIONS---
-"IO_single_crop")
-       echo "insert the filename (without the extension)"
-                            read fn
-                            echo "insert the extension"
-                            read ext
-                            echo "give the starting position X - [X,y]"
-                            read Xout
-                            echo "give the starting position Y - [x,Y]"
-                            read Yout
-                            echo -e "give X of the the output image\n===\n---\n---"
-                            read Xin
-                            echo -e "give Y of the the output image\n|--\n|--\n|--"
-                            read Yin
-                            echo "insert the output fle name"
-                            read out
-                                convert $fn.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "$out"."$ext"
-                                open "$out"."$ext"  
-;;
 
       *)  echo "unknown option"
       esac

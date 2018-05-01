@@ -1,5 +1,0 @@
-
-function single_crop
-{
-
-}

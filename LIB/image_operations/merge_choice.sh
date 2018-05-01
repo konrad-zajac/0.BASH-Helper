@@ -1,5 +1,0 @@
-
-function merge_choice
-{
-
-}

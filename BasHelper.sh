@@ -5,12 +5,6 @@ source LIB/operations.sh
 source LIB/main/safety_function.sh
 source LIB/main/delete_everything_else.sh
 
-source LIB/image_operations/main_io_choice.sh
-source LIB/image_operations/image_crop_choice.sh
-source LIB/image_operations/single_crop.sh
-source LIB/image_operations/multiple_crop_many.sh
-source LIB/image_operations/multiple_crop_one.sh
-source LIB/image_operations/merge_choice.sh
 
 #source LIB/mac_operations/toggle_dock_visibility.sh
 
@@ -26,18 +20,16 @@ operations goodbye
 function name_operations
 {
 questions manipulate
-if [[ $string_choice == 0 ]]
-then
-	questions adding_string
+if [[ $string_choice == 0 ]];then
+        questions adding_string
         if [ "$where" == "0" ];then
         operations add_front
-    	elif [ "$where" == "9" ];then
-    	operations add_back
-    	elif [ "$where" == "8" ];then
+        elif [ "$where" == "9" ];then
+        operations add_back
+        elif [ "$where" == "8" ];then
         operations add_back_ext
-    	fi
-    elif [[ $string_choice == 9 ]]
-    then
+    fi
+    elif [[ $string_choice == 9 ]];then
 	questions removing_string
         if [[ $removing_choice == 0 ]];then
         operations rm_front
@@ -85,22 +77,22 @@ function mac_operations
 }
 function image_operations 
 {
-main_io_choice
+	questions IO_questions
     if [[ $image_choice == 0 ]]; then
-        operations IO_merge_choice
+        questions IO_merge_choice
         if [[ $merge_choice == 0 ]];then
-           operations image_merge_vertically
+           operations IO_h_merge
         elif [[ $merge_choice == 9 ]];then
-           operations image_merge_horizontally
+           operations IO_v_merge 
         fi
     elif [[ $image_choice == 9 ]];then
        operations IO_single_crop             
     elif [[ $image_choice == 8 ]]
     then    
-        multiple_crop_many
+        operations IO_multiple_crop_many
     elif [[ $image_choice == 7 ]]
     then
-        multiple_crop_one
+        operations IO_multiple_crop_one
     elif [[ $image_choice == "Q" || "q" ]]
     then
     operations quit
