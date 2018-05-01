@@ -11,11 +11,7 @@ source LIB/image_operations/single_crop.sh
 source LIB/image_operations/multiple_crop_many.sh
 source LIB/image_operations/multiple_crop_one.sh
 source LIB/image_operations/merge_choice.sh
-source LIB/image_operations/merge_vertically.sh
-source LIB/image_operations/merge_horizontally.sh
 
-source LIB/mac_operations/zero_delay_dock.sh
-source LIB/mac_operations/toggle_battery_percentage.sh
 #source LIB/mac_operations/toggle_dock_visibility.sh
 
 
@@ -74,15 +70,15 @@ function mac_operations
 {
     questions mac_operations_questions
     if [[ $mac_choice == 0 ]];then
-        zero_delay_dock
+        operations MO_zero_dd
     elif [[ $mac_choice == 9 ]];then
         operations MO_change_screenshots_path
     elif [[ $mac_choice == 8 ]];then
         operations mac_toggle_files_visibility
     elif [[ $mac_choice == 7 ]];then
-        toggle_battery_percentage
+        operations MO_bty_prc
     elif [[ $mac_choice == 6 ]];then
-        toggle_dock_visibility
+        operations MO_tf_visibility
     elif [[ $mac_choice == "Q" || "q" ]];then
         operations quit
     fi

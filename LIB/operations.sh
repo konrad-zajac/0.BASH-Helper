@@ -232,7 +232,7 @@ function operations
           fi
           killall Dock
           ;;
-          "mac_toggle_files_visibility")
+          "MO_tf_visibility")
           if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
               defaults write com.apple.finder AppleShowAllFiles YES
             else
@@ -241,6 +241,19 @@ function operations
               killall Finder
              killall Terminal;;
 
+             "MO_bty_prc")
+               if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ]
+              then
+                defaults write com.apple.menuextra.battery ShowPercent YES
+              else
+                defaults write com.apple.menuextra.battery ShowPercent NO
+              fi
+            killall SystemUIServer;;
+ 
+              "MO_zero_dd")
+        defaults write com.apple.dock autohide-time-modifier -int 0
+        killall Dock
+              ;;
 #5_OTHER OPERATIONS---
       "OO_conv_mov2mp4")
           echo "Enter the name of the .mov";read name

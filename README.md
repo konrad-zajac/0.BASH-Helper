@@ -1,4 +1,4 @@
-#0.BASH Helper 
+#basHelper 
     
     * Name operation functions:
     
@@ -31,4 +31,4 @@
 
     * Other operations: 
         - convert .mov to .mp4
-		- sort alphabetically 
+        - sort alphabetically 
