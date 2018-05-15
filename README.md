@@ -3,10 +3,7 @@
     
     * Name operation functions:
     
-        - Adding:
-                - To the front of the word
-                - To the back of the word (without the extension)
-                - To the back of the word (with the extension)
+        - Adding string to many filenames (to the front, to the back, and to the back with the extension)
     
         - Removing:
                 - Number (characters from start)
@@ -22,7 +19,7 @@
         - Change the path of the screenshots
         - Toggle the visibility of hidden files
         - Toggle the visibility of the battery percantage 
-		- Show recents iin the dock
+        - Show recents in the dock
     
     * Image operations: 
 
