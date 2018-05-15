@@ -1,4 +1,5 @@
 #basHelper 
+(18 operations and counting!)
     
     * Name operation functions:
     
@@ -13,8 +14,7 @@
     
         - Modyfing:
                 - Modyfing strings
-                - Renaming in a sequence from 00, 01, 02, ... N with extension
-                - Renaming in a sequence from 01, 02, 03, ... N with extension
+                - Renaming from 0,1 or M to N
     
     * Mac operations: 
 
@@ -22,8 +22,10 @@
         - Change the path of the screenshots
         - Toggle the visibility of hidden files
         - Toggle the visibility of the battery percantage 
+		- Show recents iin the dock
     
     * Image operations: 
+
 	    - Merge
 	    - crop single image
 	    - crop one dimmension from different images

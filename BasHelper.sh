@@ -66,11 +66,11 @@ function mac_operations
     elif [[ $mac_choice == 9 ]];then
         operations MO_change_screenshots_path
     elif [[ $mac_choice == 8 ]];then
-        operations mac_toggle_files_visibility
+        operations MO_tf_visibility
     elif [[ $mac_choice == 7 ]];then
         operations MO_bty_prc
     elif [[ $mac_choice == 6 ]];then
-        operations MO_tf_visibility
+        operations MO_dock_recent
     elif [[ $mac_choice == "Q" || "q" ]];then
         operations quit
     fi

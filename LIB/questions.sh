@@ -1,6 +1,25 @@
 function questions
 {
 case $1 in
+"display_main")
+echo "||=================================||"
+      echo "||   BASH HELPER 17 FUNCTIONS      ||"
+      echo "||   [h] - Help     [Q] - quit     ||"
+      echo "||==========main options===========||"
+      echo "||                                 ||" 
+      echo "|| [0] - Name operations [13Fun.]  ||" 
+      echo "||                                 ||" 
+      echo "|| [9] - Mac operations  [5Fun.]   ||" 
+      echo "||                                 ||" 
+      echo "|| [8] - Image operations[4Fun.]*  ||"  
+      echo "||                                 ||" 
+      echo "|| [7] - Other operations[2Fun.]** ||" 
+      echo "||                                 ||"  
+      echo "||=================================||"
+      echo "||* - Requires ImageMagic          ||"  
+      echo "||* - Requires FFmpeg              ||"  
+      echo "||=================================||"
+  read main_choice;;
   "manipulate") 
     echo -e "[0]==============================\nadd, remove, or modify  string?"
     echo "[0] Add"
@@ -53,8 +72,9 @@ case $1 in
     echo  "what mac operation would you like to do?"
     echo "[0] Make the dock hide delay 0"
     echo "[9] change the path for screenshots"
-    echo "[8] Toggle hidden files"
+    echo "[8] Togglge hidden files"
     echo "[7] Toggle battery percentage"
+    echo "[6] Show recents in dock"
     echo "[Q] Quit"
     read mac_choice;;
 

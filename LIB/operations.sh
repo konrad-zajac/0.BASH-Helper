@@ -1,30 +1,10 @@
-#[0] STRING MANIPULATION
-#[9] MAC_OPERATIONS
-#[8]_IMAGE OPERATION
-#[7]_OTHER OPERATION
 function operations
 {
   case $1 in
 #1 MAIN CHOICE
     "main_choice")
-    echo "||=================================||"
-  echo "||   BASH HELPER 17 FUNCTIONS      ||"
-  echo "||   [h] - Help     [Q] - quit     ||"
-  echo "||==========main options===========||"
-  echo "||                                 ||" 
-  echo "|| [0] - Name operations [13Fun.]  ||" 
-  echo "||                                 ||" 
-  echo "|| [9] - Mac operations  [4Fun.]   ||" 
-  echo "||                                 ||" 
-  echo "|| [8] - Image operations[4Fun.]*  ||"  
-  echo "||                                 ||" 
-  echo "|| [7] - Other operations[2Fun.]** ||" 
-  echo "||                                 ||"  
-  echo "||=================================||"
-  echo "||* - Requires ImageMagic          ||"  
-  echo "||* - Requires FFmpeg              ||"  
-  echo "||=================================||"
-  read main_choice
+    questions display_main
+      
   case "$main_choice" in 
     "0") name_operations ;;
     "9") mac_operations ;;	
@@ -35,64 +15,61 @@ function operations
     "q") operations quit;;
     "Q") operations quit
   esac;;
-
-      "help")
-        echo "   !!========================================================================!!"
-        echo "   !! [0] - CHANGE THE NAME                                                  !!" 
-        echo "   !!  --[0.0] ADD {what,where}                                              !!" 
-        echo "   !!            |                                                           !!"
-        echo "   !!            |                                                           !!" 
-        echo "   !!            |---[0.0.0] -- to the front                                 !!"  
-        echo "   !!            |---[0.0.9] -- to the back with extension                   !!"  
-        echo "   !!            |---[0.0.8] -- to the back without extension                !!"  
-        echo "   !!                                                                        !!"
-        echo "   !!                                                                        !!"
-        echo "   !!  --[0.9] REMOVE                                                        !!" 
-        echo "   !!               |                                                        !!" 
-        echo "   !!               --[0.9.0] NUMBER OF CHARACTERS from front                !!"    
-        echo "   !!               |                                                        !!"
-        echo "   !!               --[0.9.9] STRING                                         !!" 
-        echo "   !!                                                                        !!"
-        echo "   !!  --[0.8] MODIFY                                                        !!" 
-        echo "   !!               |                                                        !!" 
-        echo "   !!               --[0.8.0] INCREMENT A SERIES OF FOLDERS                  !!" 
-        echo "   !!               --[0.8.9] MODIFY STRINGS                                 !!" 
-        echo "   !!               --[0.8.8] RENAME PHOTOS LIKE (R@@ M@@ D@@                !!" 
-        echo "   !!               --[0.8.7] RENAME PHOTOS FROM 1 TO N                      !!" 
-        echo "   !!                                                                        !!"
-        echo "   !!========================================================================!!"
-        echo "   !! [9] - MAC OPERATIONS                                                   !!" 
-        echo "   !!  |                                                                     !!" 
-        echo "   !!  -- [9.0]MAKE THE DOCK DELAY 0                                         !!" 
-        echo "   !!  -- [9.9] CHANGR THE PATH FOR SCREENSHOTS                              !!" 
-        echo "   !!  -- [9.8]HIDDEN FILES                                                  !!" 
-        echo "   !!               |                                                        !!" 
-        echo "   !!               --[9.9.0] SHOW                                           !!" 
-        echo "   !!               --[9.9.9] HIDE                                           !!" 
-        echo "   !!========================================================================!!"
-        echo "   !! [8] - IMAGE MANIPULATION[REQUIRES IMAGE MAGIC]                         !!" 
-        echo "   !!  |                                                                     !!" 
-        echo "   !!  -- [8.0] CROP                                                         !!"
-        echo "   !!  -- [8.9] MERGE                                                        !!"
-        echo "   !!               |                                                        !!" 
-        echo "   !!               --[8.9.0] ||| VERTICAL                                   !!" 
-        echo "   !!               --[8.9.9] --- HORIZONTAL                                 !!" 
-        echo "   !!                                                                        !!"
-        echo "   !!========================================================================!!"
-        echo "   !! [7] - CONVERT .mov to .mp4  [REQUIRES "ffmpeg" ]                        !!" 
-        echo "   ============================================================================"
-      ;;
-          
-          "goodbye")
-          echo "[0] - run again"
-        echo "[9] - delete the app"
-        echo "[ANY OTHER KEY] - Quit"
+###
+    "help")
+      echo "   !!========================================================================!!"
+      echo "   !! [0] - CHANGE THE NAME                                                  !!" 
+      echo "   !!  --[0.0] ADD {what,where}                                              !!" 
+      echo "   !!            |                                                           !!"
+      echo "   !!            |                                                           !!" 
+      echo "   !!            |---[0.0.0] -- to the front                                 !!"  
+      echo "   !!            |---[0.0.9] -- to the back with extension                   !!"  
+      echo "   !!            |---[0.0.8] -- to the back without extension                !!"  
+      echo "   !!                                                                        !!"
+      echo "   !!                                                                        !!"
+      echo "   !!  --[0.9] REMOVE                                                        !!" 
+      echo "   !!               |                                                        !!" 
+      echo "   !!               --[0.9.0] NUMBER OF CHARACTERS from front                !!"    
+      echo "   !!               |                                                        !!"
+      echo "   !!               --[0.9.9] STRING                                         !!" 
+      echo "   !!                                                                        !!"
+      echo "   !!  --[0.8] MODIFY                                                        !!" 
+      echo "   !!               |                                                        !!" 
+      echo "   !!               --[0.8.0] INCREMENT A SERIES OF FOLDERS                  !!" 
+      echo "   !!               --[0.8.9] MODIFY STRINGS                                 !!" 
+      echo "   !!               --[0.8.8] RENAME PHOTOS LIKE (R@ M@ D@)m                 !!" 
+      echo "   !!               --[0.8.7] RENAME PHOTOS FROM 1 TO N                      !!" 
+      echo "   !!                                                                        !!"
+      echo "   !!========================================================================!!"
+      echo "   !! [9] - MAC OPERATIONS                                                   !!" 
+      echo "   !!  |                                                                     !!" 
+      echo "   !!  -- [9.0]MAKE THE DOCK DELAY 0                                         !!" 
+      echo "   !!  -- [9.9] CHANGR THE PATH FOR SCREENSHOTS                              !!" 
+      echo "   !!  -- [9.8]HIDDEN FILES                                                  !!" 
+      echo "   !!               |                                                        !!" 
+      echo "   !!               --[9.9.0] SHOW                                           !!" 
+      echo "   !!               --[9.9.9] HIDE                                           !!" 
+      echo "   !!========================================================================!!"
+      echo "   !! [8] - IMAGE MANIPULATION[REQUIRES IMAGE MAGIC]                         !!" 
+      echo "   !!  |                                                                     !!" 
+      echo "   !!  -- [8.0] CROP                                                         !!"
+      echo "   !!  -- [8.9] MERGE                                                        !!"
+      echo "   !!               |                                                        !!" 
+      echo "   !!               --[8.9.0] ||| VERTICAL                                   !!" 
+      echo "   !!               --[8.9.9] --- HORIZONTAL                                 !!" 
+      echo "   !!                                                                        !!"
+      echo "   !!========================================================================!!"
+      echo "   !! [7] - CONVERT .mov to .mp4  [REQUIRES "ffmpeg" ]                        !!" 
+      echo "   ============================================================================";;
+##########
+    "goodbye")
+        echo -e "[0] - run again\n[9] - delete the app\n[ANY OTHER KEY] - Quit"
         read end_choice
         case "$end_choice" in
         "0") operations restart ;;
         "9") operations self_destruct ;;
       esac;;
-
+##########
       "self_destruct")
           echo -e "Are you sure?\n[9] - NO \n[0] - YES "
       read final_end_choice
@@ -217,61 +194,27 @@ function operations
           fi  
           let i=i+1;
             done;;
-
-#[9]_MAC_OPERATIONS---
-          "MO_change_screenshots_path")
-          echo -e "create the directiry ~/Documments/screenshots and make it the default, or to other?\n[0] - yes \n[9] - no, to other path"
-          read screenshot_choice
-          if [[ $screenshot_choice == 0 ]];then
-          (mkdir -p ~/Documents/screenshots) && (defaults write com.apple.screencapture location ~/Documents/screenshots)
-          elif [[ $screenshot_choice == 9 ]];then
-          echo "enter path"
-          read path
-          defaults write com.apple.screencapture location $path
-          fi
-          killall Dock;;
-
-          "MO_tf_visibility")
-          if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
-              defaults write com.apple.finder AppleShowAllFiles YES
-            else
-              defaults write com.apple.finder AppleShowAllFiles NO
-            fi
-              killall Finder
-             killall Terminal;;
-
-             "MO_bty_prc")
-               if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ]
-              then
-                defaults write com.apple.menuextra.battery ShowPercent YES
-              else
-                defaults write com.apple.menuextra.battery ShowPercent NO
-              fi
-            killall SystemUIServer;;
- 
-              "MO_zero_dd")
-        defaults write com.apple.dock autohide-time-modifier -int 0
-        killall Dock;;
-
 #[8]_IMAGE OPERATIONS---
 "IO_multiple_crop_many")
 echo -e "This function crops images named 1..2..3..N"
            echo "How many photos?"
        read num_ph    
+       echo $num_ph          
 
-    echo "insert the extension";read ext
-    echo "give the starting position X - [X,y]";read Xout
-    echo "give the starting position Y - [x,Y]";read Yout
-    echo -e "give X of the the output image\n===\n---\n---";read Xin
-    echo -e "give Y of the the output image\n|--\n|--\n|--";read Yin       
+    echo "insert the extension"
+    read ext
+    echo "give the starting position X - [X,y]"
+    read Xout
+    echo "give the starting position Y - [x,Y]"
+    read Yout
+    echo -e "give X of the the output image\n===\n---\n---"
+    read Xin
+    echo -e "give Y of the the output image\n|--\n|--\n|--"
+    read Yin       
+
 for ((i = 1 ; i <= $num_ph ; i += 1)); do
-                if [ $i -le 9 ]; then
-                safety_function
-convert "0$i.$ext" -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy0$i"."$ext"
-              else
-                safety_function
 convert $i.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy$i"."$ext"
-fi;done;;
+done;;
 
 "IO_single_crop")
        echo "insert the filename (without the extension)";read fn
@@ -346,6 +289,43 @@ convert $big_photo -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy$i".png
 done;;
           "IO_h_merge") mkdir res;convert tmp/1.$ext tmp/2.$ext +append res/result_h.$ext;open res/result_h.$ext;;
           "IO_v_merge") mkdir res;convert tmp/1.$ext tmp/2.$ext -append res/result_v.$ext;open res/result_v.$ext;;
+#[9]_MAC OPERATIONS---
+          "MO_change_screenshots_path")
+          echo -e "create the directiry ~/Documments/screenshots and make it the default, or to other?\n[0] - yes \n[9] - no, to other path"
+          read screenshot_choice
+          if [[ $screenshot_choice == 0 ]];then
+          (mkdir -p ~/Documents/screenshots) && (defaults write com.apple.screencapture location ~/Documents/screenshots)
+          elif [[ $screenshot_choice == 9 ]];then
+          echo "enter path"
+          read path
+          defaults write com.apple.screencapture location $path
+          fi
+          killall Dock;;
+#_MO_1#########
+          "MO_tf_visibility")
+          if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
+              defaults write com.apple.finder AppleShowAllFiles YES
+            else
+              defaults write com.apple.finder AppleShowAllFiles NO
+            fi
+              killall Finder
+             killall Terminal;;
+#MO_2#########
+    "MO_bty_prc")
+      if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ]
+      then
+      defaults write com.apple.menuextra.battery ShowPercent YES
+      else
+      defaults write com.apple.menuextra.battery ShowPercent NO
+      fi
+      killall SystemUIServer;;
+#MO_3######### 
+    "MO_zero_dd")
+    defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock;;
+#MO_4#########
+    "MO_dock_recent")
+    defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;;
+
 
 #[7]_OTHER OPERATIONS---
       "OO_conv_mov2mp4")
