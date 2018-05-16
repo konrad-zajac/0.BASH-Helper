@@ -75,6 +75,7 @@ echo "||=================================||"
     echo "[8] Togglge hidden files"
     echo "[7] Toggle battery percentage"
     echo "[6] Show recents in dock"
+    echo "[5] Toggle visibilty finder path"
     echo "[Q] Quit"
     read mac_choice;;
 

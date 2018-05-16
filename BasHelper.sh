@@ -71,6 +71,8 @@ function mac_operations
         operations MO_bty_prc
     elif [[ $mac_choice == 6 ]];then
         operations MO_dock_recent
+    elif [[ $mac_choice == 5 ]];then
+        operations MO_show_path
     elif [[ $mac_choice == "Q" || "q" ]];then
         operations quit
     fi

@@ -312,12 +312,9 @@ done;;
              killall Terminal;;
 #MO_2#########
     "MO_bty_prc")
-      if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ]
-      then
-      defaults write com.apple.menuextra.battery ShowPercent YES
-      else
-      defaults write com.apple.menuextra.battery ShowPercent NO
-      fi
+      if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
+      defaults write com.apple.menuextra.battery ShowPercent YES;else
+      defaults write com.apple.menuextra.battery ShowPercent NO;fi
       killall SystemUIServer;;
 #MO_3######### 
     "MO_zero_dd")
@@ -325,7 +322,16 @@ done;;
 #MO_4#########
     "MO_dock_recent")
     defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;;
-
+#MO_5#########
+    "MO_show_path")
+       if [ $(defaults read com.apple.finder _FXShowPosixPathInTitle -bool) -eq 1 ];then
+       echo "OK!"
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool false 
+      else
+       echo "NOK!"
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+      fi
+      killall Finder;;
 
 #[7]_OTHER OPERATIONS---
       "OO_conv_mov2mp4")

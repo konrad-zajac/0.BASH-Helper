@@ -1,5 +1,5 @@
 #basHelper 
-(18 operations and counting!)
+(19 operations and counting!)
     
     * Name operation functions:
     
@@ -20,6 +20,7 @@
         - Toggle the visibility of hidden files
         - Toggle the visibility of the battery percantage 
         - Show recents in the dock
+        - Toggle the visibility of finder path 
     
     * Image operations: 
 
