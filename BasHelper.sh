@@ -110,9 +110,10 @@ function other_operations
     # elif [[ $oo_choice == 9 ]] 
     # then
     #     operations delete_else
-    elif [[ $oo_choice == 9 ]] 
-    then
+    elif [[ $oo_choice == 9 ]];then
         operations OO_sort
+    elif [[ $oo_choice == 8 ]];then
+        operations OO_copy_many_files 
     elif [[ $oo_choice == "Q" || "q" ]]
     then
         operations quit

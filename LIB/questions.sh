@@ -84,6 +84,7 @@ echo "||=================================||"
     echo "[H,h] Help"
     echo "[0] Convert mov to mp4"
     echo "[9] sort alphabeticaly"
+    echo "[8] copy file many times" 
     echo "[R] Run again"
     echo "[Q] Quit"
     read oo_choice;;

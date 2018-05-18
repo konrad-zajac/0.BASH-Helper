@@ -61,7 +61,7 @@ function operations
       echo "   !!========================================================================!!"
       echo "   !! [7] - CONVERT .mov to .mp4  [REQUIRES "ffmpeg" ]                        !!" 
       echo "   ============================================================================";;
-##########
+++++++++++#
     "goodbye")
         echo -e "[0] - run again\n[9] - delete the app\n[ANY OTHER KEY] - Quit"
         read end_choice
@@ -69,7 +69,7 @@ function operations
         "0") operations restart ;;
         "9") operations self_destruct ;;
       esac;;
-##########
+++++++++++#
       "self_destruct")
           echo -e "Are you sure?\n[9] - NO \n[0] - YES "
       read final_end_choice
@@ -270,7 +270,7 @@ done;;
           defaults write com.apple.screencapture location $path
           fi
           killall Dock;;
-#_MO_1#########
+#_MO_1++++++++++
           "MO_tf_visibility")
           if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
               defaults write com.apple.finder AppleShowAllFiles YES
@@ -279,37 +279,41 @@ done;;
             fi
               killall Finder
              killall Terminal;;
-#MO_2#########
+#MO_2++++++++++
     "MO_bty_prc")
       if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
       defaults write com.apple.menuextra.battery ShowPercent YES;else
       defaults write com.apple.menuextra.battery ShowPercent NO;fi
       killall SystemUIServer;;
-#MO_3######### 
+#MO_3++++++++++ 
     "MO_zero_dd")
     defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock;;
-#MO_4#########
+#MO_4++++++++++
     "MO_dock_recent")
     defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;;
-#MO_5#########
+#MO_5++++++++++
     "MO_show_path")
        if [ $(defaults read com.apple.finder _FXShowPosixPathInTitle -bool) -eq 1 ];then
-       echo "OK!"
-      defaults write com.apple.finder _FXShowPosixPathInTitle -bool false 
-      else
-       echo "NOK!"
-      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-      fi
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool false;else
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true;fi
       killall Finder;;
 
 #[7]_OTHER OPERATIONS---
+#OO_1++++++++++
       "OO_conv_mov2mp4")
           echo "Enter the name of the .mov";read name
           ffmpeg -i $name.mov -vcodec copy -acodec copy $name.mp4;;
-
+#OO_2++++++++++
           "OO_sort") echo "Enter the name of the file to be sorted";read in;filename="${in%.*}";ext="${in##*.}"
           cat $in | sort > ${filename}.sorted.${ext};;
-#6_IMAGE OPERATIONS---
+#OO_3++++++++++
+    "OO_copy_many_files")
+          echo "Enter the filename";read f_name
+          echo "Enter the number of copies";read num
+	for num in $(seq 1 $num);do
+			extension="${f_name##*.}"
+		cp "$f_name" "$num.${extension}"
+	done;;      
 
       *)  echo "unknown option"
       esac

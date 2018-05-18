@@ -1,5 +1,5 @@
 #basHelper 
-(19 operations and counting!)
+(20 operations and counting!)
     
     * Name operation functions:
     
@@ -7,7 +7,7 @@
     
         - Removing:
                 - Number (characters from start)
-                - Sting
+                - Strng
     
         - Modyfing:
                 - Modyfing strings
@@ -25,10 +25,11 @@
     * Image operations: 
 
 	    - Merge
-	    - crop single image
-	    - crop one dimmension from different images
-	    - crop different dimmensions from ine images
+	    - Crop single image
+	    - Crop one dimmension from different images
+	    - Crop different dimmensions from ine images
 
     * Other operations: 
-        - convert .mov to .mp4
-        - sort alphabetically 
+        - Convert .mov to .mp4
+        - Sort alphabetically 
+        - Copy many files 
