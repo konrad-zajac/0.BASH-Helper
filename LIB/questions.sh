@@ -56,9 +56,9 @@ echo "||=================================||"
  "IO_questions")
     echo "what image operation to perform?"
     echo "[0] - merge"
-    echo "[9] - (one  format  one  image ) crop one image"
-    echo "[8] - (one  format  many images) crop many images from many images"
-    echo "[7] - (many formats one  image ) crop many images from one image"
+    echo "[9] - (ONE  format  ONE   image ) crop one image"
+    echo "[8] - (ONE  format  MANY images ) crop many images from many images"
+    echo "[7] - (MANY formats ONE  image  ) crop many images from one image"
     echo "[Q] - Quit"
     read image_choice;;
 
