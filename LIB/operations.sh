@@ -6,8 +6,7 @@ function operations
     questions display_main
       
   case "$main_choice" in 
-    "0") name_operations ;;
-    "9") mac_operations ;;	
+    "0") name_operations ;;    "9") mac_operations ;;	
     "8") image_operations;;	
     "7") other_operations;;	
     "h") operations help;;
@@ -61,7 +60,7 @@ function operations
       echo "   !!========================================================================!!"
       echo "   !! [7] - CONVERT .mov to .mp4  [REQUIRES "ffmpeg" ]                        !!" 
       echo "   ============================================================================";;
-#
+##########
     "goodbye")
         echo -e "[0] - run again\n[9] - delete the app\n[ANY OTHER KEY] - Quit"
         read end_choice
@@ -69,7 +68,7 @@ function operations
         "0") operations restart ;;
         "9") operations self_destruct ;;
       esac;;
-#
+##########
       "self_destruct")
           echo -e "Are you sure?\n[9] - NO \n[0] - YES "
       read final_end_choice
@@ -135,8 +134,7 @@ function operations
           "rm_string")
           echo "What string to remove?"
                           read string_to_remove
-                      for f in *
-                      do
+                      for f in *;do
                             safety_function
                       mv "$f" "$(echo $f | sed "s/$string_to_remove//g")"
                   done;;
@@ -171,11 +169,9 @@ function operations
          ext="${f##*.}"
             if [ $i -le 9 ];then
             safety_function
-            mv "$f" "0$i.$ext"
-          else
+            mv "$f" "0$i.$ext";else
             safety_function
-            mv "$f" "$i.$ext"
-          fi  
+            mv "$f" "$i.$ext";fi  
         let i=i+1;
             done;;
 
@@ -213,33 +209,27 @@ for ((i = 1 ; i <= $num_ph ; i += 1));do
 done;;
 
 "IO_single_crop")
-       echo "insert the filename (without the extension)";read fn
-                            echo "insert the extension";read ext
-                            echo "give the starting position X - [X,y]";read Xout
-                            echo "give the starting position Y - [x,Y]";read Yout
-                            echo -e "give X of the the output image\n===\n---\n---";read Xin
-                            echo -e "give Y of the the output image\n|--\n|--\n|--";read Yin
-                            echo "insert the output fle name";read out
-                                convert $fn.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "$out"."$ext";open "$out"."$ext"  ;;
+    echo "insert the filename (without the extension)";read fn
+    echo "insert the extension";read ext
+    echo "give the starting position X - [X,y]";read Xout
+    echo "give the starting position Y - [x,Y]";read Yout
+    echo -e "give X of the the output image\n===\n---\n---";read Xin
+    echo -e "give Y of the the output image\n|--\n|--\n|--";read Yin
+    echo "insert the output fle name";read out
+    convert $fn.$ext -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "$out"."$ext";open "$out"."$ext"  ;;
 "IO_rename_photos")
 			echo "Insert the year - (this will not change)"
 			read year
 			echo "Insert the month - (this will not change)"
 			read month
             max=1
-                    for f in *
-                    do
-                    	safety_function
-								if [ $max -le 9 ]
-								then
-							mv "$f" "R$year M$month D0$max.png"
-								else
-                        mv "$f" "R$yearM$monthD$max.png"
-								fi
-                let max=max+1;
-                    done;;
-
-
+      for f in *;do
+      safety_function
+      if [ $max -le 9 ];then
+      mv "$f" "R$year M$month D0$max.png";else
+      mv "$f" "R$yearM$monthD$max.png";fi
+      let max=max+1;
+      done;;
     "IO_multipe_crop_one")
     echo -e "This function crops images from one big group\n How many small photos?"
        read num_ph    
@@ -270,7 +260,7 @@ done;;
           defaults write com.apple.screencapture location $path
           fi
           killall Dock;;
-#_MO_1
+#_MO_1#########
           "MO_tf_visibility")
           if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
               defaults write com.apple.finder AppleShowAllFiles YES
@@ -279,41 +269,52 @@ done;;
             fi
               killall Finder
              killall Terminal;;
-#MO_2
+#MO_2#########
     "MO_bty_prc")
       if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
       defaults write com.apple.menuextra.battery ShowPercent YES;else
       defaults write com.apple.menuextra.battery ShowPercent NO;fi
       killall SystemUIServer;;
-#MO_3 
+#MO_3######### 
     "MO_zero_dd")
     defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock;;
-#MO_4
+#MO_4#########
     "MO_dock_recent")
     defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;;
-#MO_5
+#MO_5#########
     "MO_show_path")
        if [ $(defaults read com.apple.finder _FXShowPosixPathInTitle -bool) -eq 1 ];then
-      defaults write com.apple.finder _FXShowPosixPathInTitle -bool false;else
-      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true;fi
+       echo "OK!"
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool false 
+      else
+       echo "NOK!"
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+      fi
       killall Finder;;
 
 #[7]_OTHER OPERATIONS---
-#OO_1
+#OO_1#########
       "OO_conv_mov2mp4")
           echo "Enter the name of the .mov";read name
           ffmpeg -i $name.mov -vcodec copy -acodec copy $name.mp4;;
-#OO_2
+#OO_2#########
           "OO_sort") echo "Enter the name of the file to be sorted";read in;filename="${in%.*}";ext="${in##*.}"
           cat $in | sort > ${filename}.sorted.${ext};;
-#OO_3
-    "OO_copy_many_files")
-          echo "Enter the filename";read f_name
-          echo "Enter the number of copies";read num
-	for num in $(seq 1 $num);do
-			extension="${f_name##*.}"
-		cp "$f_name" "$num.${extension}"
-	done;;      
+#OO_3#########
+  "OO_copy_many_files")
+  echo "Enter the filename";read f_name
+  echo "Enter the number of copies";read num
+  INPUT=$f_name
+  for num in $(seq 1 $num);do
+  extension="${f_name##*.}"
+  if [ $num -le 9 ];then
+  cp "$INPUT" "0${num}.${extension}";else
+  cp "$INPUT" "$num.${extension}"
+  fi
+  done
+  echo -e "Delete $f_name?\n[0] - NO \n[9] - YES "
+  read OO3end_choice
+ [[ $OO3end_choice = 9 ]] && rm $f_name || echo "nd";;      
 
       *)  echo "unknown option"
       esac
