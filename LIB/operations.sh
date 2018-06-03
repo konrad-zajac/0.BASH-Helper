@@ -126,8 +126,8 @@ function operations
           read number_to_remove
           let number_to_remove=number_to_remove+1;
           for f in *; do
-          safety_function
-          mv "$f" "$(echo $f | cut "-c"$number_to_remove"-")"
+	        safety_function
+			 mv "./$f" "$(echo $f | cut "-c"$number_to_remove"-")"
           done
           ;;
 

@@ -23,10 +23,22 @@ echo "||=================================||"
   "manipulate") 
     echo -e "[0]==============================\nadd, remove, or modify  string?"
     echo "[0] Add"
-    echo " [0,0] - to the front"
-    echo " [0,9] - to the back with extension"                       
-    echo " [0,8] - to the back without extension"                       
-    echo -e "[9] Remove\n[8] Change\n - Modify\n - Rename\n - Increment\n [Q] Quit"
+		echo " [->,0] - to the front"
+		echo " [->,9] - to the back with extension"                       
+		echo " [->,8] - to the back without extension"                       
+
+    echo "[9] Remove"
+		echo " [->,0] - number (chars from front)"
+		echo " [->,9] - string"                       
+
+	echo "[8] Change"
+		echo " [->,0] - Modify"
+		echo " [->,9] - Rename from	0 to N"
+		echo " [->,8] - Rename from	1 to N"
+		echo " [->,7] - Rename from	M to N"
+		echo " [->,9] - Increment a series of folders"
+		
+		echo "[Q] Quit"
   read string_choice;;
 
   "adding_string") 
