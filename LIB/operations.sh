@@ -246,8 +246,8 @@ echo "---------------------photo $i----------------------------"
 
 convert $big_photo -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy$i".png
 done;;
-          "IO_h_merge") mkdir res;convert tmp/1.$ext tmp/2.$ext +append res/result_h.$ext;open res/result_h.$ext;;
-          "IO_v_merge") mkdir res;convert tmp/1.$ext tmp/2.$ext -append res/result_v.$ext;open res/result_v.$ext;;
+          "IO_v_merge") convert 1.$ext 2.$ext +append result_v.$ext;open result_v.$ext;;
+          "IO_h_merge") convert 1.$ext 2.$ext -append result_h.$ext;open result_h.$ext;;
 #[9]_MAC OPERATIONS---
           "MO_change_screenshots_path")
           echo -e "create the directiry ~/Documments/screenshots and make it the default, or to other?\n[0] - yes \n[9] - no, to other path"

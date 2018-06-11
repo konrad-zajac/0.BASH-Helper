@@ -25,9 +25,9 @@ if [[ $string_choice == 0 ]];then
         if [ "$where" == "0" ];then
         operations add_front
         elif [ "$where" == "9" ];then
-        operations add_back
-        elif [ "$where" == "8" ];then
         operations add_back_ext
+        elif [ "$where" == "8" ];then
+        operations add_back
     fi
     elif [[ $string_choice == 9 ]];then
 	questions removing_string
