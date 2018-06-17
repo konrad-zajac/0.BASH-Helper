@@ -88,6 +88,7 @@ echo "||=================================||"
     echo "[7] Toggle battery percentage"
     echo "[6] Show recents in dock"
     echo "[5] Toggle visibilty finder path"
+    echo "[4] Set the prefix of the screensshot name"
     echo "[Q] Quit"
     read mac_choice;;
 

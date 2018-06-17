@@ -1,5 +1,5 @@
 #basHelper 
-(20 operations and counting!)
+(21 operations and counting!)
     
     * Name operation functions:
     
@@ -16,7 +16,8 @@
     * Mac operations: 
 
         - Dock delay is equal 0
-        - Change the path of the screenshots
+        - Change the path of screenshots
+        - Change the name of screenshots
         - Toggle the visibility of hidden files
         - Toggle the visibility of the battery percantage 
         - Show recents in the dock

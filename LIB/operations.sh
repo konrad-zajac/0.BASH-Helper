@@ -248,7 +248,7 @@ convert $big_photo -crop "$Xin"x"$Yin"+"$Xout"+"$Yout" "cpy$i".png
 done;;
           "IO_v_merge") convert 1.$ext 2.$ext +append result_v.$ext;open result_v.$ext;;
           "IO_h_merge") convert 1.$ext 2.$ext -append result_h.$ext;open result_h.$ext;;
-#[9]_MAC OPERATIONS---
+#[9]_MAC_OPERATIONS---
           "MO_change_screenshots_path")
           echo -e "create the directiry ~/Documments/screenshots and make it the default, or to other?\n[0] - yes \n[9] - no, to other path"
           read screenshot_choice
@@ -291,6 +291,12 @@ done;;
       defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
       fi
       killall Finder;;
+#MO_7#########
+    "MO_change_screenshots_name")
+	  echo "enter the prefix of the name"
+	  read screenshot_name
+	  defaults write com.apple.screencapture name $screenshot_name
+		killall -9 SystemUIServer;;
 
 #[7]_OTHER OPERATIONS---
 #OO_1#########
