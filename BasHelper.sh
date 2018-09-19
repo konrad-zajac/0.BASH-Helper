@@ -12,8 +12,7 @@ source LIB/foo_str/replace.sh
 source LIB/foo_str/rm/rm_num_frnt.sh 
 source LIB/foo_str/rm/rm_string.sh 
 
-source LIB/foo_str.sh
-source LIB/foo_mac.sh
+source LIB/foo_mac/dock/zeroDD.sh
 
 source LIB/main/safety_function.sh
 source LIB/main/delete_everything_else.sh
@@ -75,7 +74,7 @@ function mac_operations
 {
     questions mac_operations_questions
     if [[ $mac_choice == 0 ]];then
-        foo_mac MO_zero_dd
+        ZeroDD
     elif [[ $mac_choice == 9 ]];then
         foo_mac MO_change_screenshots_path
     elif [[ $mac_choice == 8 ]];then

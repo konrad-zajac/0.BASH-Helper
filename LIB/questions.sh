@@ -43,9 +43,9 @@ echo "||=================================||"
 
   "adding_string") 
     echo -e "[0->0]==========================\nwhere?"
-    echo "[0] - to the front of the word"
-    echo "[9] - to the back of the word"
-    echo "[8] - to the back of the word with extension"
+    echo "[0] - [*]flname.txt"
+    echo "[9] - flname[*].txt"
+    echo "[8] - flname.txt[*]"
     read where
     echo "What to add?"
    read what;;
@@ -59,9 +59,9 @@ echo "||=================================||"
   "modifying_string")
     echo -e "[0->8]===========================\nSelct a modification"
     echo "[0] Modify strings"
-    echo "[9] Rename files from 0 to N"
-    echo "[8] Rename files from 1 to N"
-    echo "[7] Rename files from M to N"
+    echo "[9] Rename filenames from 0 to N"
+    echo "[8] Rename filenames from 1 to N"
+    echo "[7] Rename filenames from M to N"
     echo "[6] Increment a series of folders, when a duplicate found."
     read modifying_choice;;
 
@@ -89,6 +89,8 @@ echo "||=================================||"
     echo "[6] Show recents in dock"
     echo "[5] Toggle visibilty finder path"
     echo "[4] Set the prefix of the screensshot name"
+    echo "[3] Change te screenshot name"
+    echo "[2] Toggle extension visibility"
     echo "[Q] Quit"
     read mac_choice;;
 
