@@ -13,6 +13,7 @@ source LIB/foo_str/rm/rm_num_frnt.sh
 source LIB/foo_str/rm/rm_string.sh 
 
 source LIB/foo_mac/dock/zeroDD.sh
+source LIB/foo_mac/dock/recentApps.sh
 
 source LIB/main/safety_function.sh
 source LIB/main/delete_everything_else.sh
@@ -82,7 +83,7 @@ function mac_operations
     elif [[ $mac_choice == 7 ]];then
         foo_mac MO_bty_prc
     elif [[ $mac_choice == 6 ]];then
-        foo_mac MO_dock_recent
+        recentApps
     elif [[ $mac_choice == 5 ]];then
         foo_mac MO_show_path
     elif [[ $mac_choice == 4 ]];then
