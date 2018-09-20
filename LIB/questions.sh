@@ -90,16 +90,14 @@ echo "||=================================||"
     if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
     echo "[7] Toggle battery percentage - [currently NOT visible]";else
     echo "[7] Toggle battery percentage - [currently visible]";fi
-
-
     echo "[6] Show recents in dock"
     if [ $(defaults read com.apple.finder _FXShowPosixPathInTitle -bool) -eq 1 ];then
     echo "[5] Toggle visibilty finder path - [currently visible]";else
     echo "[5] Toggle visibilty finder path - [currently NOT visible]";fi
+    if [ $(defaults read  NSGlobalDomain AppleShowAllExtensions -bool ) -eq 1 ];then
+    echo "[4] Toggle extension visibility - [currently visible]";else
+    echo "[4] Toggle extension visibility - [currently NOT visible]";fi
     
-    echo "[4] Set the prefix of the screensshot name"
-    echo "[3] Change te screenshot name"
-    echo "[2] Toggle extension visibility"
     echo "[Q] Quit"
     read mac_choice;;
 

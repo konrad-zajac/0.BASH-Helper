@@ -1,5 +1,5 @@
 #basHelper 
-(21 operations and counting!)
+(20 operations and counting!)
     
     * Name operation functions:
     
@@ -12,16 +12,18 @@
         - Modyfing:
                 - Modyfing strings
                 - Renaming from 0,1 or M to N
+                - Incremnting directories
     
     * Mac operations: 
+    	
+    	- Dock operations:
+    		- Modify dock delay to 0s
+    		- Show recent aplications
 
-        - Dock delay is equal 0
-        - Change the path of screenshots
-        - Change the name of screenshots
-        - Toggle the visibility of hidden files
-        - Toggle the visibility of the battery percantage 
-        - Show recents in the dock
-        - Toggle the visibility of finder path 
+    	- Toggle:
+    		- visibility of hidden files
+    		- visibility of the battery percantage 
+    		- visibility of finder path 
     
     * Image operations: 
 

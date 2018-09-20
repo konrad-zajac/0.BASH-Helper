@@ -15,9 +15,15 @@ source LIB/foo_str/rm/rm_string.sh
 source LIB/foo_mac/dock/zeroDD.sh
 source LIB/foo_mac/dock/recentApps.sh
 source LIB/foo_mac/scrShtPth.sh
-source LIB/foo_mac/tglHf.sh
-source LIB/foo_mac/tglBtyPrc.sh
-source LIB/foo_mac/tglFinPth.sh
+source LIB/foo_mac/tgl/tglHf.sh
+source LIB/foo_mac/tgl/tglBtyPrc.sh
+source LIB/foo_mac/tgl/tglFinPth.sh
+source LIB/foo_mac/tgl/tglExtVis.sh
+
+
+source LIB/foo_img/merge/horMerge.sh
+source LIB/foo_img/merge/verMerge.sh
+
 
 
 
@@ -93,11 +99,7 @@ function mac_operations
     elif [[ $mac_choice == 5 ]];then
         tglFinPth
     elif [[ $mac_choice == 4 ]];then
-        foo_mac MO_t_hf_vis 
-    elif [[ $mac_choice == 3 ]];then
-        foo_mac MO_chg_scrt_name
-    elif [[ $mac_choice == 2 ]];then
-        foo_mac MO_t_ext_vis
+        tglExtVis
     elif [[ $mac_choice == "Q" || "q" ]];then
         operations quit
     fi
@@ -108,9 +110,9 @@ function image_operations
     if [[ $image_choice == 0 ]]; then
         questions IO_merge_choice
         if [[ $merge_choice == 0 ]];then
-           operations IO_h_merge
+            horMerge 
         elif [[ $merge_choice == 9 ]];then
-           operations IO_v_merge
+            verMerge
         fi
     elif [[ $image_choice == 9 ]];then
        operations IO_single_crop
