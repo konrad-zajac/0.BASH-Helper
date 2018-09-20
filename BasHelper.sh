@@ -17,6 +17,8 @@ source LIB/foo_mac/dock/recentApps.sh
 source LIB/foo_mac/scrShtPth.sh
 source LIB/foo_mac/tglHf.sh
 source LIB/foo_mac/tglBtyPrc.sh
+source LIB/foo_mac/tglFinPth.sh
+
 
 
 source LIB/main/safety_function.sh
@@ -89,7 +91,7 @@ function mac_operations
     elif [[ $mac_choice == 6 ]];then
         recentApps
     elif [[ $mac_choice == 5 ]];then
-        foo_mac MO_show_path
+        tglFinPth
     elif [[ $mac_choice == 4 ]];then
         foo_mac MO_t_hf_vis 
     elif [[ $mac_choice == 3 ]];then

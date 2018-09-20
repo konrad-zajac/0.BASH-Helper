@@ -86,15 +86,17 @@ echo "||=================================||"
     echo "[9] change the path for screenshots"
     if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
     echo "[8] Togglge hidden files - currently [NOT visible]";else
-    echo "[8] Togglge hidden files - currently [visible]"
-    fi
-if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
-    echo "[7] Toggle battery percentage - currently [NOT visible]";else
-    echo "[7] Toggle battery percentage - currently [visible]";fi
+    echo "[8] Togglge hidden files - currently [visible]";fi
+    if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
+    echo "[7] Toggle battery percentage - [currently NOT visible]";else
+    echo "[7] Toggle battery percentage - [currently visible]";fi
 
 
     echo "[6] Show recents in dock"
-    echo "[5] Toggle visibilty finder path"
+    if [ $(defaults read com.apple.finder _FXShowPosixPathInTitle -bool) -eq 1 ];then
+    echo "[5] Toggle visibilty finder path - [currently visible]";else
+    echo "[5] Toggle visibilty finder path - [currently NOT visible]";fi
+    
     echo "[4] Set the prefix of the screensshot name"
     echo "[3] Change te screenshot name"
     echo "[2] Toggle extension visibility"
