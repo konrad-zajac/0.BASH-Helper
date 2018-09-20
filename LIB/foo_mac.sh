@@ -5,16 +5,7 @@ function foo_mac
         "MO_zero_dd")
 
         "MO_change_screenshots_path")
-            echo -e "create the directiry ~/Documments/screenshots and make it the default, or to other?\n[0] - yes \n[9] - no, to other path"
-            read screenshot_choice
-                if [[ $screenshot_choice == 0 ]];then
-                    (mkdir -p ~/Documents/screenshots) && (defaults write com.apple.screencapture location ~/Documents/screenshots)
-                elif [[ $screenshot_choice == 9 ]];then
-                    echo "enter path"
-                    read path
-                    defaults write com.apple.screencapture location $path
-                fi
-            killall Dock;;
+            ;;
 #_MO_1#########
         "MO_t_hf_vis")
             if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
@@ -32,7 +23,7 @@ function foo_mac
             killall SystemUIServer;;
 #MO_4#########
         "MO_dock_recent")
-            defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;;
+            ;;
 #MO_5#########
         "MO_show_path")
             if [ $(defaults read com.apple.finder _FXShowPosixPathInTitle -bool) -eq 1 ];then

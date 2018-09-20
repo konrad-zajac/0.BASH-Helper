@@ -84,7 +84,11 @@ echo "||=================================||"
     echo  "what mac operation would you like to do?"
     echo "[0] Make the dock hide delay 0"
     echo "[9] change the path for screenshots"
-    echo "[8] Togglge hidden files"
+    if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
+    echo "[8] Togglge hidden files - currently NOT visible"    
+    else
+    echo "[8] Togglge hidden files - currently visible"
+    fi
     echo "[7] Toggle battery percentage"
     echo "[6] Show recents in dock"
     echo "[5] Toggle visibilty finder path"

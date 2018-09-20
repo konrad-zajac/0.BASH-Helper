@@ -14,6 +14,9 @@ source LIB/foo_str/rm/rm_string.sh
 
 source LIB/foo_mac/dock/zeroDD.sh
 source LIB/foo_mac/dock/recentApps.sh
+source LIB/foo_mac/scrShtPth.sh
+source LIB/foo_mac/tglHf.sh
+
 
 source LIB/main/safety_function.sh
 source LIB/main/delete_everything_else.sh
@@ -77,9 +80,9 @@ function mac_operations
     if [[ $mac_choice == 0 ]];then
         ZeroDD
     elif [[ $mac_choice == 9 ]];then
-        foo_mac MO_change_screenshots_path
+        scrShtPth
     elif [[ $mac_choice == 8 ]];then
-        foo_mac MO_t_hf_vis 
+        tglHf
     elif [[ $mac_choice == 7 ]];then
         foo_mac MO_bty_prc
     elif [[ $mac_choice == 6 ]];then
