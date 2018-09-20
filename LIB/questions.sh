@@ -85,11 +85,14 @@ echo "||=================================||"
     echo "[0] Make the dock hide delay 0"
     echo "[9] change the path for screenshots"
     if [ $(defaults read com.apple.finder AppleShowAllFiles) == "NO" ];then
-    echo "[8] Togglge hidden files - currently NOT visible"    
-    else
-    echo "[8] Togglge hidden files - currently visible"
+    echo "[8] Togglge hidden files - currently [NOT visible]";else
+    echo "[8] Togglge hidden files - currently [visible]"
     fi
-    echo "[7] Toggle battery percentage"
+if [ $(defaults read com.apple.menuextra.battery ShowPercent) == "NO" ];then
+    echo "[7] Toggle battery percentage - currently [NOT visible]";else
+    echo "[7] Toggle battery percentage - currently [visible]";fi
+
+
     echo "[6] Show recents in dock"
     echo "[5] Toggle visibilty finder path"
     echo "[4] Set the prefix of the screensshot name"

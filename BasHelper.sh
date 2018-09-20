@@ -16,6 +16,7 @@ source LIB/foo_mac/dock/zeroDD.sh
 source LIB/foo_mac/dock/recentApps.sh
 source LIB/foo_mac/scrShtPth.sh
 source LIB/foo_mac/tglHf.sh
+source LIB/foo_mac/tglBtyPrc.sh
 
 
 source LIB/main/safety_function.sh
@@ -84,7 +85,7 @@ function mac_operations
     elif [[ $mac_choice == 8 ]];then
         tglHf
     elif [[ $mac_choice == 7 ]];then
-        foo_mac MO_bty_prc
+        tglBtyPrc
     elif [[ $mac_choice == 6 ]];then
         recentApps
     elif [[ $mac_choice == 5 ]];then
