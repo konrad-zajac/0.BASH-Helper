@@ -1,6 +1,6 @@
 function safety_function
 {
-	if [ "$f" == "BasHelper.sh" ] || [ "$f" ==  "LIB" ]; then
+	if [ "$f" == "basHelper.sh" ] || [ "$f" ==  "LIB" ]; then
                     continue
                     fi
 }
