@@ -1,34 +1,38 @@
-#0.BASH Helper 
+#basHelper 
+(20 operations and counting!)
     
     * Name operation functions:
     
-        - Adding:
-                - To the front of the word
-                - To the back of the word (without the extension)
-                - To the back of the word (with the extension)
+        - Adding string to many filenames (to the front, to the back, and to the back with the extension)
     
         - Removing:
                 - Number (characters from start)
-                - Sting
+                - Strng
     
         - Modyfing:
                 - Modyfing strings
-                - Renaming in a sequence from 00, 01, 02, ... N with extension
-                - Renaming in a sequence from 01, 02, 03, ... N with extension
+                - Renaming from 0,1 or M to N
+                - Incremnting directories
     
     * Mac operations: 
+    	
+    	- Dock operations:
+    		- Modify dock delay to 0s
+    		- Show recent aplications
 
-        - Dock delay is equal 0
-        - Change the path of the screenshots
-        - Toggle the visibility of hidden files
-        - Toggle the visibility of the battery percantage 
+    	- Toggle:
+    		- visibility of hidden files
+    		- visibility of the battery percantage 
+    		- visibility of finder path 
     
     * Image operations: 
+
 	    - Merge
-	    - crop single image
-	    - crop one dimmension from different images
-	    - crop different dimmensions from ine images
+	    - Crop single image
+	    - Crop one dimmension from different images
+	    - Crop different dimmensions from ine images
 
     * Other operations: 
-        - convert .mov to .mp4
-		- sort alphabetically 
+        - Convert .mov to .mp4
+        - Sort alphabetically 
+        - Copy many files 
