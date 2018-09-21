@@ -23,8 +23,10 @@ source LIB/foo_mac/tgl/tglExtVis.sh
 
 source LIB/foo_img/merge/horMerge.sh
 source LIB/foo_img/merge/verMerge.sh
-source LIB/foo_img/crop/singlCrp.sh
+source LIB/foo_img/crop/oneCrpOne.sh
 source LIB/foo_img/crop/mulCrpOne.sh
+source LIB/foo_img/crop/oneCrpMul.sh
+source LIB/foo_img/crop/mulCrpMul.sh
 
 
 
@@ -117,16 +119,15 @@ function image_operations
             verMerge
         fi
     elif [[ $image_choice == 9 ]];then
-        singlCrp
-    elif [[ $image_choice == 8 ]]
-    then
+        oneCrpOne
+    elif [[ $image_choice == 8 ]];then
         mulCrpOne
-    elif [[ $image_choice == 7 ]]
-    then
-        operations IO_multiple_crop_many
-        
-    elif [[ $image_choice == "Q" || "q" ]]
-    then
+    elif [[ $image_choice == 7 ]];then
+        oneCrpMul
+    elif [[ $image_choice == 6 ]];then
+        mulCrpMul
+
+    elif [[ $image_choice == "Q" || "q" ]];then
     operations quit
     fi
 }

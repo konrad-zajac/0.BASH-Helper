@@ -1,5 +1,6 @@
 function singlCrp
 {
+ls -l
 echo "insert the filename (without the extension)";read fn
 echo "insert the extension";read ext
 echo "give the starting position X - [X,y]";read Xout
